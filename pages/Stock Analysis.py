@@ -231,7 +231,8 @@ elif analytics2[selectedAnalytics2]=="trends":
 	
 elif analytics2[selectedAnalytics2]=="correlation":
 
-	corr=getCorrelationAnalytics(target_stock_ticker = 'AAL', analytic = 'daily_returns', time = 'all_time',  ma_analytic = 'NA', ma_window = 'NA')
+	corr=getCorrelationAnalytics(stock_analytic, analytics_option[selectedAnalytic], time_value,  ma_analytic = 'NA', ma_window = 'NA')
+	#st.write(corr)
 	top = {"Top 5":"top_5", "Top 10":"top_10", "Top 20":"top_20", "Top 50":"top_50", "Top 100":"top_100"}
 	topn=st.selectbox("Top N stocks", top)
 	ticker_map = stocks_pd.set_index('Name')['Company Name'].to_dict()
